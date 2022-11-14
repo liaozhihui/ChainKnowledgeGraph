@@ -19,12 +19,7 @@ class MedicalGraph:
         self.company_product_path = os.path.join(cur_dir, 'data/company_product.json')
         self.industry_industry = os.path.join(cur_dir, 'data/industry_industry.json')
         self.product_product = os.path.join(cur_dir, 'data/product_product.json')
-        self.g = Graph(
-            host="127.0.0.1",  # neo4j 搭载服务器的ip地址，ifconfig可获取到
-            http_port=7474,  # neo4j 服务器监听的端口号
-            user="neo4j",  # 数据库user name，如果没有更改过，应该是neo4j
-            password="123456")
-
+        self.g = Graph("http://localhost:7474", auth=('neo4j', '123456'),name="chain")
     '''建立节点'''
     def create_node(self, label, nodes):
         count = 0
