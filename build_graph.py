@@ -43,7 +43,7 @@ class MedicalGraph:
     """加载数据"""
     def load_data(self, filepath):
         datas = []
-        with open(filepath, 'r') as f:
+        with open(filepath, 'r',encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
                 if not line:
